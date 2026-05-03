@@ -2,68 +2,790 @@
 <html>
 
 <head>
-  <!-- Basic -->
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <!-- Mobile Metas -->
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-  <!-- Site Metas -->
-  <meta name="keywords" content="" />
-  <meta name="description" content="" />
-  <meta name="author" content="" />
+  <title>MAU TAU MOBIL JDM ??</title>
 
-  <title>ElectrochipF</title>
+  <!-- Owl Carousel CSS -->
+  <link rel="stylesheet" type="text/css"
+    href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.3/assets/owl.carousel.min.css" />
+  <!-- Bootstrap 4 CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" />
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 
-  <!-- slider stylesheet -->
-  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.3/assets/owl.carousel.min.css" />
+  <style>
+    /* ========== BASE ========== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-  <!-- bootstrap core css -->
-  <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+    body {
+      font-family: 'Poppins', sans-serif;
+      color: #1a1a1a;
+      background: #ffffff;
+      overflow-x: hidden;
+    }
 
-  <!-- fonts style -->
-  <link href="https://fonts.googleapis.com/css?family=Poppins:400,600,700&display=swap" rel="stylesheet">
-  <!-- Custom styles for this template -->
-  <link href="css/style.css" rel="stylesheet" />
-  <!-- responsive style -->
-  <link href="css/responsive.css" rel="stylesheet" />
+    a {
+      text-decoration: none;
+    }
+
+    /* ========== HEADER ========== */
+    .header_section {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 100;
+      padding: 15px 0;
+    }
+
+    .navbar {
+      padding: 0;
+    }
+
+    .navbar-brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: #fff !important;
+      font-weight: 700;
+      font-size: 1.1rem;
+    }
+
+    .navbar-brand img {
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid #ff4444;
+    }
+
+    .navbar-brand span {
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .navbar-nav .nav-link {
+      color: #ffffff !important;
+      font-weight: 600;
+      font-size: 0.95rem;
+      padding: 8px 18px !important;
+      transition: color 0.3s;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .navbar-nav .nav-link:hover,
+    .navbar-nav .nav-item.active .nav-link {
+      color: #ff4444 !important;
+    }
+
+    /* Hamburger */
+    .navbar-toggler {
+      border: none;
+      outline: none;
+      padding: 0;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+    }
+
+    .navbar-toggler span {
+      display: block;
+      width: 28px;
+      height: 3px;
+      background: #fff;
+      border-radius: 2px;
+      transition: 0.3s;
+    }
+
+    .navbar-toggler[aria-expanded="true"] .s-1 {
+      transform: rotate(45deg) translate(5px, 6px);
+    }
+
+    .navbar-toggler[aria-expanded="true"] .s-2 {
+      opacity: 0;
+    }
+
+    .navbar-toggler[aria-expanded="true"] .s-3 {
+      transform: rotate(-45deg) translate(5px, -6px);
+    }
+
+    /* ========== HERO / SLIDER ========== */
+    .hero_area {
+      min-height: 100vh;
+      background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+
+    .hero_area::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('https://images.unsplash.com/photo-1558618666-fcd25c85f82e?auto=format&fit=crop&w=1920&q=60') center/cover no-repeat;
+      opacity: 0.15;
+    }
+
+    .slider_section {
+      position: relative;
+      z-index: 2;
+      padding: 120px 0 80px;
+    }
+
+    .detail_box h1 {
+      font-size: 4rem;
+      font-weight: 700;
+      color: #fff;
+      line-height: 1.1;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    .detail_box h1 br:last-of-type {
+      color: #ff4444;
+    }
+
+    .detail_box p {
+      color: #cccccc;
+      font-size: 1rem;
+      line-height: 1.7;
+      margin-bottom: 30px;
+      max-width: 450px;
+    }
+
+    .detail_box a,
+    .btn-box a,
+    .detail-box a {
+      display: inline-block;
+      padding: 14px 40px;
+      background: #ff4444;
+      color: #fff;
+      font-weight: 700;
+      border-radius: 50px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      transition: all 0.3s;
+      border: 2px solid #ff4444;
+    }
+
+    .detail_box a:hover,
+    .btn-box a:hover,
+    .detail-box a:hover {
+      background: transparent;
+      color: #ff4444;
+    }
+
+    /* Carousel images */
+    .img_container {
+      position: relative;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 20px 60px rgba(255, 68, 68, 0.15);
+    }
+
+    .img-box img {
+      width: 100%;
+      height: 400px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .carousel-control-prev,
+    .carousel-control-next {
+      width: 45px;
+      height: 45px;
+      background: #ff4444;
+      border-radius: 50%;
+      top: 50%;
+      transform: translateY(-50%);
+      opacity: 1;
+      bottom: auto;
+      transition: background 0.3s;
+      position: absolute;
+    }
+
+    .carousel-control-prev {
+      left: -22px;
+    }
+
+    .carousel-control-next {
+      right: -22px;
+    }
+
+    .carousel-control-prev:hover,
+    .carousel-control-next:hover {
+      background: #ff6666;
+    }
+
+    .carousel-control-prev::after,
+    .carousel-control-next::after {
+      content: '';
+      display: none;
+    }
+
+    .carousel-control-prev-icon,
+    .carousel-control-next-icon {
+      background: none;
+      width: 20px;
+      height: 20px;
+    }
+
+    /* ========== HEADING ========== */
+    .heading_container {
+      text-align: center;
+      margin-bottom: 50px;
+      position: relative;
+    }
+
+    .heading_container h2 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: #1a1a1a;
+      position: relative;
+      display: inline-block;
+    }
+
+    .heading_container h2::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 4px;
+      background: #ff4444;
+      border-radius: 2px;
+    }
+
+    .heading_container img {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-top: 15px;
+      border: 2px solid #ff4444;
+    }
+
+    /* ========== SERVICE SECTION ========== */
+    .service_section {
+      padding: 100px 0;
+      background: #f8f9fa;
+    }
+
+    .service_container {
+      display: flex;
+      gap: 25px;
+      overflow-x: auto;
+      padding-bottom: 20px;
+      scroll-snap-type: x mandatory;
+    }
+
+    .service_container::-webkit-scrollbar {
+      height: 6px;
+    }
+
+    .service_container::-webkit-scrollbar-track {
+      background: #eee;
+      border-radius: 3px;
+    }
+
+    .service_container::-webkit-scrollbar-thumb {
+      background: #ff4444;
+      border-radius: 3px;
+    }
+
+    .service_container .box {
+      min-width: 300px;
+      max-width: 300px;
+      background: #fff;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+      transition: all 0.4s;
+      scroll-snap-align: start;
+      flex-shrink: 0;
+    }
+
+    .service_container .box:hover,
+    .service_container .box.active {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 40px rgba(255, 68, 68, 0.15);
+    }
+
+    .service_container .box .img-box {
+      height: 200px;
+      overflow: hidden;
+    }
+
+    .service_container .box .img-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s;
+    }
+
+    .service_container .box:hover .img-box img {
+      transform: scale(1.1);
+    }
+
+    .service_container .box .detail-box {
+      padding: 20px;
+    }
+
+    .service_container .box .detail-box h5 {
+      font-weight: 700;
+      font-size: 1.1rem;
+      margin-bottom: 10px;
+      color: #1a1a1a;
+    }
+
+    .service_container .box .detail-box p {
+      font-size: 0.85rem;
+      color: #666;
+      line-height: 1.6;
+    }
+
+    .btn-box {
+      text-align: center;
+      margin-top: 40px;
+    }
+
+    /* ========== ABOUT SECTION ========== */
+    .about_section {
+      padding: 100px 0;
+      background: #fff;
+    }
+
+    .about_section .detail-box .heading_container {
+      text-align: left;
+      margin-bottom: 25px;
+    }
+
+    .about_section .detail-box .heading_container h2::after {
+      left: 0;
+      transform: none;
+    }
+
+    .about_section .detail-box .heading_container img {
+      display: none;
+    }
+
+    .about_section .detail-box p {
+      color: #555;
+      line-height: 1.8;
+      font-size: 0.95rem;
+      margin-bottom: 25px;
+    }
+
+    .img_container {
+      position: relative;
+      height: 450px;
+    }
+
+    .img_container .img-box {
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    }
+
+    .img_container .img-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .img_container .b1 {
+      width: 80%;
+      height: 350px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .img_container .b2 {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 55%;
+      height: 250px;
+      z-index: 3;
+      border: 5px solid #fff;
+    }
+
+    /* ========== BLOG SECTION ========== */
+    .blog_section {
+      padding: 100px 0;
+      background: #f8f9fa;
+    }
+
+    .blog_section .box {
+      background: #fff;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+      transition: all 0.4s;
+      height: 100%;
+    }
+
+    .blog_section .box:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 15px 40px rgba(255, 68, 68, 0.12);
+    }
+
+    .blog_section .box .img-box {
+      height: 280px;
+      overflow: hidden;
+    }
+
+    .blog_section .box .img-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s;
+    }
+
+    .blog_section .box:hover .img-box img {
+      transform: scale(1.08);
+    }
+
+    .blog_section .box .detail-box {
+      padding: 25px;
+    }
+
+    .blog_section .box .detail-box h5 {
+      font-weight: 700;
+      font-size: 1.2rem;
+      margin-bottom: 12px;
+    }
+
+    .blog_section .box .detail-box p {
+      color: #666;
+      line-height: 1.7;
+      font-size: 0.9rem;
+    }
+
+    /* ========== CONTACT SECTION ========== */
+    .contact_section {
+      padding: 100px 0;
+      background: #fff;
+    }
+
+    .contact_section form input {
+      width: 100%;
+      padding: 16px 20px;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      margin-bottom: 18px;
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.95rem;
+      transition: border-color 0.3s;
+      outline: none;
+    }
+
+    .contact_section form input:focus {
+      border-color: #ff4444;
+    }
+
+    .contact_section form .message-box {
+      min-height: 130px;
+      resize: vertical;
+    }
+
+    .contact_section form button {
+      padding: 14px 45px;
+      background: #ff4444;
+      color: #fff;
+      border: none;
+      border-radius: 50px;
+      font-weight: 700;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: all 0.3s;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .contact_section form button:hover {
+      background: #e63333;
+      transform: translateY(-2px);
+    }
+
+    .map_container {
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+      height: 100%;
+      min-height: 400px;
+    }
+
+    .map-responsive {
+      width: 100%;
+      height: 100%;
+    }
+
+    .map-responsive iframe {
+      width: 100%;
+      height: 100%;
+      min-height: 400px;
+    }
+
+    /* ========== INFO SECTION ========== */
+    .info_section {
+      background: #1a1a2e;
+      padding: 60px 0 30px;
+      color: #fff;
+    }
+
+    .info_contact a {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: #ccc;
+      text-decoration: none;
+      margin-bottom: 20px;
+      transition: color 0.3s;
+    }
+
+    .info_contact a:hover {
+      color: #ff4444;
+    }
+
+    .info_contact a i {
+      font-size: 1.2rem;
+      color: #ff4444;
+      width: 20px;
+      text-align: center;
+    }
+
+    .info_form form {
+      display: flex;
+      gap: 0;
+      margin-bottom: 30px;
+    }
+
+    .info_form input {
+      flex: 1;
+      padding: 14px 20px;
+      border: none;
+      border-radius: 50px 0 0 50px;
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.9rem;
+      outline: none;
+    }
+
+    .info_form button {
+      padding: 14px 30px;
+      background: #ff4444;
+      color: #fff;
+      border: none;
+      border-radius: 0 50px 50px 0;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background 0.3s;
+      text-transform: uppercase;
+      font-size: 0.85rem;
+    }
+
+    .info_form button:hover {
+      background: #e63333;
+    }
+
+    .info_social {
+      display: flex;
+      gap: 15px;
+      justify-content: flex-end;
+      align-items: center;
+      height: 100%;
+    }
+
+    .info_social a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.1);
+      color: #fff;
+      font-size: 1rem;
+      transition: all 0.3s;
+    }
+
+    .info_social a:hover {
+      background: #ff4444;
+      transform: translateY(-3px);
+    }
+
+    /* ========== FOOTER ========== */
+    .footer_section {
+      background: #0f0f1e;
+      padding: 25px 0;
+      text-align: center;
+    }
+
+    .footer_section p {
+      color: #888;
+      font-size: 0.9rem;
+      margin: 0;
+    }
+
+    .footer_section a {
+      color: #ff4444;
+    }
+
+    /* ========== RESPONSIVE ========== */
+    @media (max-width: 991px) {
+      .detail_box h1 {
+        font-size: 2.8rem;
+      }
+
+      .img-box img {
+        height: 300px;
+      }
+
+      .carousel-control-prev,
+      .carousel-control-next {
+        display: none;
+      }
+
+      .navbar-collapse {
+        background: rgba(26, 26, 46, 0.97);
+        border-radius: 12px;
+        padding: 20px;
+        margin-top: 15px;
+        backdrop-filter: blur(10px);
+      }
+
+      .img_container .b1 {
+        width: 100%;
+        height: 280px;
+      }
+
+      .img_container .b2 {
+        width: 60%;
+        height: 200px;
+      }
+
+      .img_container {
+        height: auto;
+      }
+    }
+
+    @media (max-width: 767px) {
+      .detail_box h1 {
+        font-size: 2.2rem;
+      }
+
+      .slider_section {
+        padding: 100px 0 60px;
+        text-align: center;
+      }
+
+      .detail_box p {
+        max-width: 100%;
+      }
+
+      .service_container .box {
+        min-width: 260px;
+        max-width: 260px;
+      }
+
+      .heading_container h2 {
+        font-size: 1.8rem;
+      }
+
+      .about_section .detail-box .heading_container {
+        text-align: center;
+      }
+
+      .about_section .detail-box .heading_container h2::after {
+        left: 50%;
+        transform: translateX(-50%);
+      }
+
+      .info_form form {
+        flex-direction: column;
+      }
+
+      .info_form input {
+        border-radius: 50px;
+      }
+
+      .info_form button {
+        border-radius: 50px;
+      }
+
+      .info_social {
+        justify-content: center;
+        margin-top: 20px;
+      }
+    }
+
+    @media (max-width: 575px) {
+      .detail_box h1 {
+        font-size: 1.8rem;
+      }
+
+      .navbar-brand span {
+        font-size: 0.85rem;
+      }
+
+      .service_container .box {
+        min-width: 240px;
+        max-width: 240px;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
   <div class="hero_area">
-    <!-- header section strats -->
+    <!-- Header -->
     <header class="header_section">
       <div class="container">
-        <nav class="navbar navbar-expand-lg custom_nav-container ">
+        <nav class="navbar navbar-expand-lg custom_nav-container">
           <a class="navbar-brand" href="index.html">
-            <img src="images\logo jdm.jpg" alt="">
-            <span>
-              MAU TAU MOBIL JDM ??
-            </span>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Flag_of_Japan.svg/1200px-Flag_of_Japan.svg.png"
+              alt="JDM Logo">
+            <span>MAU TAU MOBIL JDM ??</span>
           </a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="s-1"> </span>
-            <span class="s-2"> </span>
-            <span class="s-3"> </span>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="s-1"></span>
+            <span class="s-2"></span>
+            <span class="s-3"></span>
           </button>
 
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <div class="d-flex ml-auto flex-column flex-lg-row align-items-center">
-              <ul class="navbar-nav  ">
+              <ul class="navbar-nav">
                 <li class="nav-item active">
                   <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="about.html"> About</a>
+                  <a class="nav-link" href="#about">About</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="service.html"> Service </a>
+                  <a class="nav-link" href="#service">Service</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="blog.html"> Blog </a>
+                  <a class="nav-link" href="#blog">Blog</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="contact.html">Contact </a>
+                  <a class="nav-link" href="#contact">Contact</a>
                 </li>
               </ul>
             </div>
@@ -71,23 +793,23 @@
         </nav>
       </div>
     </header>
-    <!-- end header section -->
-    <!-- slider section -->
-    <section class=" slider_section ">
+
+    <!-- Slider -->
+    <section class="slider_section">
       <div class="container">
-        <div class="row">
-          <div class="col-md-6 ">
+        <div class="row align-items-center">
+          <div class="col-md-6">
             <div class="detail_box">
               <h1>
                 MOBIL <br>
-                MOBIL <br>
+                <span style="color:#ff4444;">MOBIL</span> <br>
                 JDM
               </h1>
               <p>
-                JDM adalah singkatan dari Japanese Domestic Market. Istilah ini mengacu pada mobil yang hanya diproduksi serta dijual untuk pasar domestik Jepang.
+                JDM adalah singkatan dari Japanese Domestic Market. Istilah ini mengacu pada mobil yang hanya diproduksi
+                serta dijual untuk pasar domestik Jepang.
               </p>
-              <a href="" class="">
-                MULAI!!!
+              <a href="#service">MULAI!!!</a>
             </div>
           </div>
           <div class="col-lg-5 col-md-6 offset-lg-1">
@@ -97,220 +819,209 @@
                   <div class="carousel-inner">
                     <div class="carousel-item active">
                       <div class="img-box">
-                        <img src="images/yassa.jpg" alt="">
+                        <img src="https://images.unsplash.com/photo-1603584173870-7f23fdae1b7a?auto=format&fit=crop&w=600&q=80"
+                          alt="Nissan GT-R">
                       </div>
                     </div>
                     <div class="carousel-item">
                       <div class="img-box">
-                        <img src="images\d85d86a3e92a546ef4b43028b93f43a2.jpg" alt="">
+                        <img src="https://images.unsplash.com/photo-1626668893632-6f3a4466d22f?auto=format&fit=crop&w=600&q=80"
+                          alt="Toyota Supra">
                       </div>
                     </div>
                     <div class="carousel-item">
                       <div class="img-box">
-                        <img src="images\evo5.jpg" alt="">
+                        <img src="https://images.unsplash.com/photo-1580273916550-e323be2ae537?auto=format&fit=crop&w=600&q=80"
+                          alt="Lancer Evo">
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
               <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="15 18 9 12 15 6"></polyline>
+                  </svg>
+                </span>
                 <span class="sr-only">Previous</span>
               </a>
               <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="9 18 15 12 9 6"></polyline>
+                  </svg>
+                </span>
                 <span class="sr-only">Next</span>
               </a>
             </div>
-
           </div>
         </div>
       </div>
     </section>
-    <!-- end slider section -->
   </div>
 
 
-  <!-- service section -->
-  <section class="service_section layout_padding">
+  <!-- Service Section -->
+  <section class="service_section layout_padding" id="service">
     <div class="container">
       <div class="heading_container">
-        <h2>
-          Mobil Mobil JDM
-        </h2>
-        <img src="images/logo jdm.jpg" alt="">
+        <h2>Mobil Mobil JDM</h2>
       </div>
 
       <div class="service_container">
         <div class="box">
           <div class="img-box">
-            <img src="images\gggggttttttrrrrr.jpg" class="img1" alt="">
+            <img src="https://images.unsplash.com/photo-1603584173870-7f23fdae1b7a?auto=format&fit=crop&w=600&q=80"
+              alt="Nissan Skyline GTR">
           </div>
           <div class="detail-box">
-            <h5>
-              NISSAN SKYLINE GTR
-            </h5>
+            <h5>NISSAN SKYLINE GTR</h5>
             <p>
               Nissan GTR Skyline adalah salah satu mobil sport paling ikonik yang pernah diproduksi.
-               Sejak kelahirannya di akhir tahun 1960-an, 
-               GTR Skyline telah menjadi simbol keunggulan teknologi dan performa dari industri otomotif Jepang.
+              Sejak kelahirannya di akhir tahun 1960-an,
+              GTR Skyline telah menjadi simbol keunggulan teknologi dan performa dari industri otomotif Jepang.
             </p>
           </div>
         </div>
         <div class="box active">
           <div class="img-box">
-            <img src="images\suuuuuupppppraaa.jpg" class="img1" alt="">
+            <img src="https://images.unsplash.com/photo-1626668893632-6f3a4466d22f?auto=format&fit=crop&w=600&q=80"
+              alt="Supra MK4">
           </div>
           <div class="detail-box">
-            <h5>
-              SUPRA MK4
-            </h5>
+            <h5>SUPRA MK4</h5>
             <p>
-              Supra MK 4 adalah salah satu mobil keluar Toyota, 
+              Supra MK 4 adalah salah satu mobil keluar Toyota,
               mencakup generasi keempat unit tersebut yang keluar sejak tahun 1993 hingga 2002.
-               Hal yang menjadi daya tarik dari unit ini adalah performa mesinnya yang begitu buas. 
-               Dapur pacu standar saja mampu mengeluarkan daya hingga ratusan tenaga kuda.
+              Hal yang menjadi daya tarik dari unit ini adalah performa mesinnya yang begitu buas.
             </p>
           </div>
         </div>
         <div class="box">
           <div class="img-box">
-            <img src="images\pagani.jpg" class="img1" alt="">
+            <img src="https://images.unsplash.com/photo-1592198084033-aade902d1aae?auto=format&fit=crop&w=600&q=80"
+              alt="Pagani">
           </div>
           <div class="detail-box">
-            <h5>
-              PAGANI
-            </h5>
+            <h5>PAGANI</h5>
             <p>
-              Pagani Automobili SpA (biasa disebut Pagani) adalah produsen mobil sport dan komponen serat karbon asal Italia . 
-              Perusahaan ini didirikan pada tahun 1992 oleh pengusaha dan insinyur Argentina-Italia Horacio Pagani 
-              (eksekutif otomotif) dan berkantor pusat di San Cesario sul Panaro, dekat Modena, Italia.
+              Pagani Automobili SpA (biasa disebut Pagani) adalah produsen mobil sport dan komponen serat karbon asal
+              Italia.
+              Perusahaan ini didirikan pada tahun 1992 oleh Horacio Pagani
+              dan berkantor pusat di San Cesario sul Panaro, dekat Modena, Italia.
             </p>
           </div>
         </div>
-        <div class="box ">
+        <div class="box">
           <div class="img-box">
-            <img src="images\rx7.jpg" class="img1" alt="">
+            <img src="https://images.unsplash.com/photo-1544636331-e26879cd4d9b?auto=format&fit=crop&w=600&q=80"
+              alt="RX7">
           </div>
           <div class="detail-box">
-            <h5>
-              RX7
-            </h5>
+            <h5>RX7</h5>
             <p>
               RX-7 adalah mobil sport yang diproduksi oleh Mazda tahun 1978 sampai 2002.
-               RX-7 pada awalnya menggunakan mesin wankel rotari berkapasitas silinder 1.146 cc (69,9 cu in) 
-               dengan penggerak roda belakang.
+              RX-7 pada awalnya menggunakan mesin wankel rotari berkapasitas silinder 1.146 cc
+              dengan penggerak roda belakang.
             </p>
           </div>
         </div>
         <div class="box">
           <div class="img-box">
-            <img src="images\gr86.jpg" class="img1" alt="">
+            <img src="https://images.unsplash.com/photo-1614162118016-5c9b91ca8dd2?auto=format&fit=crop&w=600&q=80"
+              alt="GR86">
           </div>
           <div class="detail-box">
-            <h5>
-              GR86
-            </h5>
+            <h5>GR86</h5>
             <p>
-              Toyota GR 86 2025 adalah 4 Seater Coupe yang tersedia dalam daftar harga Rp 1,03 - 1,067 Milyar di Indonesia. 
-              It is available in 2 variants, 1 engine, and 2 transmissions option: Manual dan Otomatis in the Indonesia.
+              Toyota GR 86 2025 adalah 4 Seater Coupe yang tersedia dalam daftar harga Rp 1,03 - 1,067 Milyar di
+              Indonesia.
+              It is available in 2 variants, 1 engine, and 2 transmissions option: Manual dan Otomatis.
             </p>
           </div>
         </div>
       </div>
       <div class="btn-box">
-        <a href="">
-          SELANJUTNYA!!!
-        </a>
+        <a href="#">SELANJUTNYA!!!</a>
       </div>
     </div>
   </section>
-  <!-- end service section -->
 
-  <!-- about section -->
-  <section class="about_section layout_padding">
+
+  <!-- About Section -->
+  <section class="about_section layout_padding" id="about">
     <div class="container">
-      <div class="row">
+      <div class="row align-items-center">
         <div class="col-md-6">
           <div class="detail-box">
             <div class="heading_container">
-              <h2>
-                GARASI JDM
-              </h2>
-              <img src="images\logo jdm.jpg" alt="">
+              <h2>GARASI JDM</h2>
             </div>
             <p>
-              "Garasi JDM Cina" mungkin merujuk pada komunitas atau tempat yang berfokus pada mobil-mobil JDM 
+              "Garasi JDM Cina" mungkin merujuk pada komunitas atau tempat yang berfokus pada mobil-mobil JDM
               (Japanese Domestic Market) yang dimodifikasi atau dipelihara di China.
-               Meskipun JDM pada dasarnya berasal dari Jepang, pasar mobil di China telah berkembang pesat, 
-               dan ada banyak penggemar mobil di sana yang tertarik dengan mobil JDM, 
+              Meskipun JDM pada dasarnya berasal dari Jepang, pasar mobil di China telah berkembang pesat,
+              dan ada banyak penggemar mobil di sana yang tertarik dengan mobil JDM,
               baik untuk koleksi, modifikasi, atau bahkan balapan.
             </p>
-            <a href="">
-              selanjutnya!!!
-            </a>
+            <a href="#">Selanjutnya!!!</a>
           </div>
         </div>
         <div class="col-md-6">
           <div class="img_container">
             <div class="img-box b1">
-              <img src="images\jdm.jpg" alt="" />
+              <img src="https://images.unsplash.com/photo-1558618666-fcd25c85f82e?auto=format&fit=crop&w=800&q=80"
+                alt="JDM Garage" />
             </div>
             <div class="img-box b2">
-              <img src="images\cina.jpg" alt="" />
+              <img src="https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?auto=format&fit=crop&w=600&q=80"
+                alt="Car Collection" />
             </div>
           </div>
-
         </div>
-
       </div>
     </div>
   </section>
 
-  <!-- end about section -->
 
-
-
-
-  <!-- blog section -->
-
-  <section class="blog_section layout_padding">
+  <!-- Blog Section -->
+  <section class="blog_section layout_padding" id="blog">
     <div class="container">
       <div class="heading_container">
-        <h2>
-          Mobil Legends China
-        </h2>
-        <img src="images\logo jdm.jpg" alt="">
+        <h2>Mobil Legends Jepang</h2>
       </div>
       <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-6 mb-4">
           <div class="box">
             <div class="img-box">
-              <img src="images\gtr.jpg" alt="">
+              <img src="https://images.unsplash.com/photo-1603584173870-7f23fdae1b7a?auto=format&fit=crop&w=800&q=80"
+                alt="Nissan GTR Skyline">
             </div>
             <div class="detail-box">
-              <h5>
-                NISSAN GTR SKYLINE
-              </h5>
+              <h5>NISSAN GTR SKYLINE</h5>
               <p>
-                Nissan GTR Skyline adalah salah satu mobil sport paling ikonik yang pernah diproduksi. 
+                Nissan GTR Skyline adalah salah satu mobil sport paling ikonik yang pernah diproduksi.
                 Sejak kelahirannya di akhir tahun 1960-an,
-                 GTR Skyline telah menjadi simbol keunggulan teknologi dan performa dari industri otomotif Jepang.
+                GTR Skyline telah menjadi simbol keunggulan teknologi dan performa dari industri otomotif Jepang.
               </p>
             </div>
           </div>
         </div>
-        <div class="col-md-6">
+        <div class="col-md-6 mb-4">
           <div class="box">
             <div class="img-box">
-              <img src="images\supra.jpg" alt="">
+              <img src="https://images.unsplash.com/photo-1626668893632-6f3a4466d22f?auto=format&fit=crop&w=800&q=80"
+                alt="Supra MK4">
             </div>
             <div class="detail-box">
-              <h5>
-                SUPRA MK4
-              </h5>
+              <h5>SUPRA MK4</h5>
               <p>
                 Supra telah mendapatkan reputasi sebagai salah satu mobil sport paling didambakan di pasaran.
-                 Statusnya yang legendaris dan daya tariknya telah menjadikannya ikon di dunia otomotif, 
-                 dan daya tariknya terus tumbuh setiap tahunnya.
+                Statusnya yang legendaris dan daya tariknya telah menjadikannya ikon di dunia otomotif,
+                dan daya tariknya terus tumbuh setiap tahunnya.
               </p>
             </div>
           </div>
@@ -319,48 +1030,34 @@
     </div>
   </section>
 
-  <!-- end blog section -->
 
-
-
-  <!-- contact section -->
-
-  <section class="contact_section layout_padding">
-    <div class="container ">
+  <!-- Contact Section -->
+  <section class="contact_section layout_padding" id="contact">
+    <div class="container">
       <div class="heading_container">
-        <h2>
-          Contact
-        </h2>
-        <img src="images\logo jdm.jpg" alt="">
+        <h2>Contact</h2>
       </div>
     </div>
     <div class="container">
       <div class="row">
         <div class="col-md-6">
           <form action="">
-            <div>
-              <input type="text" placeholder="Name" />
-            </div>
-            <div>
-              <input type="email" placeholder="Email" />
-            </div>
-            <div>
-              <input type="text" placeholder="Phone Number" />
-            </div>
-            <div>
-              <input type="text" class="message-box" placeholder="Message" />
-            </div>
-            <div class="d-flex ">
-              <button>
-                Oke
-              </button>
+            <input type="text" placeholder="Name" />
+            <input type="email" placeholder="Email" />
+            <input type="text" placeholder="Phone Number" />
+            <input type="text" class="message-box" placeholder="Message" />
+            <div class="d-flex">
+              <button type="button">Oke</button>
             </div>
           </form>
         </div>
         <div class="col-md-6">
           <div class="map_container">
             <div class="map-responsive">
-              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4045494.1484670155!2d101.96571481249998!3d-6.241216100000003!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f370ed8ca87d%3A0xff1a8c3b6bae64d2!2zSkRNIOODkeODvOODiOWkqeWbveOBruWgtOaJgA!5e1!3m2!1sid!2sid!4v1740194940456!5m2!1sid!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4045494.1484670155!2d101.96571481249998!3d-6.241216100000003!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f370ed8ca87d%3A0xff1a8c3b6bae64d2!2zSkRNIOODkeODvOODiOWkqeWbveOBruWgtOaJgA!5e1!3m2!1sid!2sid!4v1740194940456!5m2!1sid!2sid"
+                width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
           </div>
         </div>
@@ -368,101 +1065,71 @@
     </div>
   </section>
 
-  <!-- end contact section -->
 
-
-  <!-- info section -->
-
+  <!-- Info Section -->
   <section class="info_section layout_padding">
     <div class="container">
       <div class="info_contact">
         <div class="row">
           <div class="col-md-4">
             <a href="">
-              <img src="images/location-white.png" alt="">
-              <span>
-                Lokasi Jatibening. Bekasi
-              </span>
+              <i class="fas fa-map-marker-alt"></i>
+              <span>Lokasi Jatibening, Bekasi</span>
             </a>
           </div>
           <div class="col-md-4">
             <a href="">
-              <img src="images/telephone-white.png" alt="">
-              <span>
-                Call :+085787153984
-              </span>
+              <i class="fas fa-phone-alt"></i>
+              <span>Call : +085787153984</span>
             </a>
           </div>
           <div class="col-md-4">
             <a href="">
-              <img src="images/envelope-white.png" alt="">
-              <span>
-                @jdmgarageshop
-              </span>
+              <i class="fas fa-envelope"></i>
+              <span>@jdmgarageshop</span>
             </a>
           </div>
         </div>
       </div>
-      <div class="row">
+      <div class="row mt-4">
         <div class="col-md-8 col-lg-9">
           <div class="info_form">
             <form action="">
               <input type="text" placeholder="Enter your email">
-              <button>
-                subscribe
-              </button>
+              <button type="button">Subscribe</button>
             </form>
           </div>
         </div>
         <div class="col-md-4 col-lg-3">
           <div class="info_social">
-            <div>
-              <a href="">
-                <img src="images/fb.png" alt="">
-              </a>
-            </div>
-            <div>
-              <a href="">
-                <img src="images/twitter.png" alt="">
-              </a>
-            </div>
-            <div>
-              <a href="">
-                <img src="images/linkedin.png" alt="">
-              </a>
-            </div>
-            <div>
-              <a href="">
-                <img src="images/instagram.png" alt="">
-              </a>
-            </div>
+            <a href=""><i class="fab fa-facebook-f"></i></a>
+            <a href=""><i class="fab fa-twitter"></i></a>
+            <a href=""><i class="fab fa-linkedin-in"></i></a>
+            <a href=""><i class="fab fa-instagram"></i></a>
           </div>
         </div>
       </div>
-
     </div>
   </section>
 
-  <!-- end info section -->
 
-  <!-- footer section -->
+  <!-- Footer -->
   <footer class="container-fluid footer_section">
     <div class="container">
       <div class="row">
         <div class="col-lg-7 col-md-9 mx-auto">
           <p>
-            &copy; 1993 powerful cylinder
-            <a href="https://html.design/"></a>
+            &copy; 1993 Powerful Cylinder
           </p>
         </div>
       </div>
     </div>
   </footer>
-  <!-- footer section -->
 
 
-  <script src="js/jquery-3.4.1.min.js"></script>
-  <script src="js/bootstrap.js"></script>
+  <!-- JS CDN -->
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
 
